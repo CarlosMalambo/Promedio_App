@@ -12,10 +12,10 @@ class Activity_Mensaage : AppCompatActivity() {
 
         val campo = findViewById<TextView>(R.id.textMensaje)
 
-        val bundle: Bundle? = this.intent.extras
+        val miBundle: Bundle? = this.intent.extras
 
-        if (bundle != null) {
-            campo.text =""
+        if (miBundle != null) {
+            campo.text ="${miBundle.getString("promedio")}"
 
         }
     }

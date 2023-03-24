@@ -1,5 +1,6 @@
 package com.example.promedio
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -43,5 +44,11 @@ class MainActivity : AppCompatActivity() {
             /* resultpromedio="PERDIO CON PROMEDIO DE $prom" */
         }
         promedio.text=resultpromedio
+
+        val intent=Intent(this,Activity_Mensaage::class.java)
+        val miBundle:Bundle=Bundle()
+        miBundle.putString("promedio",promedio!!.text.toString())
+        intent.putExtras(miBundle)
+        startActivity(intent)
     }
 }
